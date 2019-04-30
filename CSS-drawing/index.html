@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS生成艺术</title>
+    <style>
+      .category-item {
+        width: 100%;
+        border: 1px solid #dcdcdc;
+        border-width: 1px 0;
+        padding: 40px 0;
+      }
+      .demos {
+        display: flex;
+      }
+      .demo-item {
+        flex: 1;
+      }
+      .line-1 {
+        width: 70%;
+        height: 10px;
+        background-color: #000;
+      }
+      .line-2 {
+        width: 70%;
+        height: 10px;
+        border-top: 10px solid #000;
+      }
+      .line-3 {
+        width: 70%;
+        height: 10px;
+        background: linear-gradient(#000, #000) 10px no-repeat;
+      }
+      .line-4::after {
+        /* control line length */
+        content: '_______';
+
+        /* hide content */
+        color: transparent;
+
+        /* set thickness */
+        font-size: 1em;
+
+        text-decoration: overline #000;
+      }
+      .dashed-1::after {
+        content: '_______';
+        color: transparent;
+        font-size: 1em;
+        text-decoration: overline #000 dashed;
+      }
+      .dashed-2::after {
+        content: '_______';
+        color: transparent;
+        text-emphasis: '_';
+        -webkit-text-emphasis: '_' #000;
+        letter-spacing: 2px;
+        font-size: 1em;
+      }
+      .dashed-3 {
+        height: 4px;
+        width: 70%;
+        background: linear-gradient(to left, #000 70%, transparent 0) repeat-x;
+        background-size: 20px 4px;
+      }
+      .dashed-4 {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px dashed #000;
+      }
+      .circle-1 {
+        background-color: #000;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+      .circle-2 {
+        width: 60px;
+        height: 60px;
+        background: radial-gradient(#000 70%, transparent 0);
+      }
+      .circle-3::after {
+        content: '.';
+        line-height: 0;
+
+        /* set circle size */
+        font-size: 60px;
+      }
+      .circle-4 {
+        width: 60px;
+        height: 60px;
+        clip-path: circle(50%);
+        background-color: #000;
+      }
+      .semicircle-1 {
+        width: 60px;
+        height: 60px;
+        clip-path: circle(50% at 50% 0);
+        background-color: #000;
+      }
+      .triangle-1 {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent;
+        border-width: 60px;
+        border-bottom-color: #000;
+      }
+      .triangle-2 {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #000 49%, transparent 0);
+      }
+      .triangle-3 {
+        width: 60px;
+        height: 60px;
+        clip-path: polygon(0 100%, 50% 0, 100% 100%);
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="category-item">
+      <h1>直线</h1>
+      <div class="demos">
+        <div class="demo-item">
+          <h2>示例一</h2>
+          <p>使用 background-color</p>
+          <div class="line-1"></div>
+        </div>
+        <div class="demo-item">
+          <h2>示例二</h2>
+          <p>使用 border</p>
+          <div class="line-2"></div>
+        </div>
+        <div class="demo-item">
+          <h2>示例三</h2>
+          <p>使用 linear-gradient</p>
+          <div class="line-3"></div>
+        </div>
+        <div class="demo-item">
+          <h2>示例四</h2>
+          <p>使用 text-decoration</p>
+          <div class="line-4"></div>
+        </div>
+      </div>
+    </div>
+    <div class="category-item">
+      <h1>虚线</h1>
+      <div class="demos">
+        <div class="demo-item">
+          <h2>示例一</h2>
+          <p>使用 border</p>
+          <div class="dashed-1"></div>
+        </div>
+        <div class="demo-item">
+          <h2>示例二</h2>
+          <p>使用 text-emphasis</p>
+          <div class="dashed-2"></div>
+        </div>
+        <div class="demo-item">
+          <h2>示例三</h2>
+          <p>使用 linear-gradien</p>
+          <div class="dashed-3"></div>
+        </div>
+        <div class="demo-item">
+          <h2>示例四</h2>
+          <p>使用 border 和 border-radius, 可以生成虚线圆</p>
+          <div class="dashed-4"></div>
+        </div>
+      </div>
+    </div>
+    <div class="category-item">
+      <h1>圆形</h1>
+      <div class="demos">
+        <div class="demo-item">
+          <h2>示例一</h2>
+          <p>使用border-radius</p>
+          <div class="circle-1"></div>
+        </div>
+        <div class="demo-itme">
+          <h2>示例二</h2>
+          <p>使用radial-gradient （生成的圆边缘不光滑）</p>
+          <div class="circle-2"></div>
+        </div>
+        <div class="demo-item">
+          <h2>示例三</h2>
+          <p>使用 '.'</p>
+          <div class="circle-3"></div>
+        </div>
+        <div class="demo-item">
+          <h2>示例四</h2>
+          <p>使用 clip-path</p>
+          <div class="circle-4"></div>
+        </div>
+      </div>
+    </div>
+    <div class="category-item">
+      <h1>半圆</h1>
+      <div class="demos">
+        <div class="demo-item">
+          <h2>示例一</h2>
+          <p>使用clip-path</p>
+          <div class="semicircle-1"></div>
+        </div>
+      </div>
+    </div>
+    <div class="category-item">
+      <h1>三角形</h1>
+      <div class="demos">
+        <div class="demo-item">
+          <h2>示例一</h2>
+          <p>使用border</p>
+          <div class="triangle-1"></div>
+        </div>
+        <div class="demo-item">
+          <h2>示例二</h2>
+          <p>使用 linear-gradient</p>
+          <div class="triangle-2"></div>
+        </div>
+        <div class="demo-item">
+          <h2>示例三</h2>
+          <p>使用 clip-path</p>
+          <div class="triangle-3"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
