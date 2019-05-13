@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS创意与视觉表现</title>
+    <style>
+      .taiji {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(to right, #fff 50%, #000 calc(50% + 1px));
+        border: 1px solid;
+        border-radius: 50%;
+        position: relative;
+      }
+      .taiji::before,
+      .taiji::after {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .taiji::before {
+        top: 0;
+        background: radial-gradient(circle, #fff 20%, #000 calc(20% + 1px));
+      }
+      .taiji::after {
+        bottom: 0;
+        background: radial-gradient(circle, #000 20%, #fff calc(20% + 1px));
+      }
+      .mix-blend-mode-demo {
+        font-size: 16px;
+        color: #fff;
+        position: absolute;
+        top: 45%;
+        transform: translateY(-45%);
+        z-index: 1;
+        width: 100%;
+        text-align: center;
+      }
+      .mix-blend-mode-demo.is-blend{
+        mix-blend-mode: difference;
+        top: 55%;
+        transform: translateY(-55%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo-item">
+      <h1>太极(.taiji)</h1>
+      <div class="taiji"></div>
+    </div>
+    <div class="demo-item">
+      <h1>mix-blend-mode(.mix-blend-mode-demo)</h1>
+      <div class="taiji">
+        <div class="mix-blend-mode-demo">未设置mix-blend-mode</div>
+        <div class="mix-blend-mode-demo is-blend">已设置mix-blend-mode</div>
+      </div>
+    </div>
+  </body>
+</html>
