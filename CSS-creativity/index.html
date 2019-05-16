@@ -42,10 +42,49 @@
         width: 100%;
         text-align: center;
       }
-      .mix-blend-mode-demo.is-blend{
+      .mix-blend-mode-demo.is-blend {
         mix-blend-mode: difference;
         top: 55%;
         transform: translateY(-55%);
+      }
+      .shape-outside-circle {
+        width: 660px;
+      }
+      .shape-outside-circle-img {
+        width: 150px;
+        shape-outside: circle(50%);
+        float: left;
+      }
+      .shape-outside-rhombus {
+        position: relative;
+      }
+      .shape-outside-rhombus-left,
+      .shape-outside-rhombus-right {
+        width: 170px;
+        height: 130px;
+      }
+      .shape-outside-rhombus-left {
+        float: left;
+        shape-outside: polygon(0 0, 100% 0, 0% 100%);
+      }
+      .shape-outside-rhombus-right {
+        float: right;
+        shape-outside: polygon(100% 0, 100% 100%, 0 100%);
+      }
+      .shape-outside-rhombus-content {
+        color: #fff;
+        z-index: 0;
+      }
+      .shape-outside-rhombus-content::before {
+        content: '';
+        position: absolute;
+        background-color: #303133;
+        transform: skew(-50deg);
+        left: 100px;
+        right: 70px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
       }
     </style>
   </head>
@@ -59,6 +98,23 @@
       <div class="taiji">
         <div class="mix-blend-mode-demo">未设置mix-blend-mode</div>
         <div class="mix-blend-mode-demo is-blend">已设置mix-blend-mode</div>
+      </div>
+    </div>
+    <div class="demo-item">
+      <h1>shape-outside-circle(.shape-outside-circle)</h1>
+      <div class="shape-outside-circle">
+        <img class="shape-outside-circle-img" src="./imgs/biscuit.png" alt="" />
+        这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字
+      </div>
+    </div>
+    <div class="demo-item">
+      <h1>shape-outside-rhombus(.shape-outside-rhombus)</h1>
+      <div class="shape-outside-rhombus">
+        <div class="shape-outside-rhombus-left"></div>
+        <div class="shape-outside-rhombus-right"></div>
+        <div class="shape-outside-rhombus-content">
+          这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字
+        </div>
       </div>
     </div>
   </body>
