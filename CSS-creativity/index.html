@@ -110,7 +110,7 @@
         background-position: 0 0, 8px 8px;
       }
       .clip-shape {
-        width: 48%;
+        width: 32%;
         display: inline-block;
         position: relative;
         height: 300px;
@@ -133,7 +133,7 @@
         outline: 9999px solid rgba(0, 0, 0, 0.5);
       }
       .clip-shape-overlay {
-        width: 48%;
+        width: 32%;
         height: 300px;
         display: inline-block;
         position: relative;
@@ -212,6 +212,38 @@
         font-style: normal;
         white-space: nowrap;
       }
+      .clip-shape-star {
+        width: 32%;
+        height: 300px;
+        display: inline-block;
+        position: relative;
+        background: linear-gradient(red, green);
+      }
+      .clip-shape-star-main {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,.75);
+        -webkit-mask: no-repeat center;
+        -webkit-mask-image: linear-gradient(black, black), url(./imgs/star.svg);
+        -webkit-mask-size: cover, 120px 120px;
+        -webkit-mask-composite: exclude;
+        -webkit-mask-composite: source-out;
+        mask: no-repeat center;
+        mask-image: linear-gradient(black, black), url(../imgs/star.svg);
+        mask-size: cover, 120px 120px;
+        mask-composite: exclude;
+        mask-composite: source-out;
+      }
+      .outside-radius {
+        width: 96px;
+        height: 96px;
+        border-radius: 0 0 50% 0;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        box-shadow: 0 0 0 100px #ff0024;
+      }
     </style>
   </head>
   <body>
@@ -262,6 +294,13 @@
           ></span>
         </div>
       </div>
+      <div class="clip-shape-star">
+        <i class="clip-shape-star-main"></i>
+      </div>
+    </div>
+    <div class="demo-item">
+      <h1>外圆角(.outside-radius)</h1>
+      <div class="outside-radius"></div>
     </div>
   </body>
 </html>
